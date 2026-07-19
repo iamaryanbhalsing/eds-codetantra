@@ -1,0 +1,9 @@
+{
+  "name": "EDS CodeTantra",
+  "short_name": "EDS",
+  "description": "Complete EDS Theory & Lab Solutions for CodeTantra Portal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1120",
+  "theme_color": "#38BDF8"
+}

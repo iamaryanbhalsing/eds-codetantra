@@ -1,0 +1,442 @@
+[
+  {
+    "id": "lab-1.1.1",
+    "section": "lab",
+    "number": "1.1.1",
+    "title": "Basic Programs",
+    "statement": "Write a program that accepts the mass of an object (in kilograms) and its velocity (in meters per second), then calculates and displays the momentum of the object. The momentum p is calculated using the formula: p = m x v. Output the calculated momentum with appropriate units (kgm/s) rounded to 2 decimal places.",
+    "code": "mass = float(input())\nvelocity = float(input())\n\nmomentum = mass * velocity\n\nprint(f\"{momentum:.2f}kgm/s\")",
+    "topic": "Basic Programs",
+    "topicOrder": 1
+  },
+  {
+    "id": "lab-1.1.2",
+    "section": "lab",
+    "number": "1.1.2",
+    "title": "Basic Programs",
+    "statement": "Write a Python program that accepts an integer n as input. Depending on the number of digits in n: if single-digit, print its square; if two-digit, print its square root (rounded to 2 decimal places); if three-digit, print its cube root (rounded to 2 decimal places); else print \"Invalid\". Constraints: 1 <= n <= 999.",
+    "code": "n = int(input())\nd = len(str(n))\n\nif d == 1:\n    print(n * n)\nelif d == 2:\n    import math\n    print(\"%.2f\" % math.sqrt(n))\nelif d == 3:\n    print(\"%.2f\" % (n ** (1/3)))\nelse:\n    print(\"Invalid\")",
+    "topic": "Basic Programs",
+    "topicOrder": 1
+  },
+  {
+    "id": "lab-1.1.3",
+    "section": "lab",
+    "number": "1.1.3",
+    "title": "Basic Programs",
+    "statement": "Write a Python program to calculate the number of days between two dates. Input: two dates in YYYY-MM-DD format. Output: an integer representing the number of days between the given dates. Note: the first date should always be considered earlier than the second date.",
+    "code": "from datetime import date\n\nd1 = input()\nd2 = input()\n\ny1, m1, day1 = map(int, d1.split(\"-\"))\ny2, m2, day2 = map(int, d2.split(\"-\"))\n\ndate1 = date(y1, m1, day1)\ndate2 = date(y2, m2, day2)\n\ndifference = date2 - date1\n\nprint(difference.days)",
+    "topic": "Basic Programs",
+    "topicOrder": 1
+  },
+  {
+    "id": "lab-1.1.4",
+    "section": "lab",
+    "number": "1.1.4",
+    "title": "Basic Programs",
+    "statement": "Write a Python program to reverse the digits of the number and print the reversed number. Input: a single integer. Output: a single integer, which is the reversed number.",
+    "code": "n = int(input())\nreversed_number = str(n)[::-1]\nprint(int(reversed_number))",
+    "topic": "Basic Programs",
+    "topicOrder": 1
+  },
+  {
+    "id": "lab-1.1.5",
+    "section": "lab",
+    "number": "1.1.5",
+    "title": "Basic Programs",
+    "statement": "Write a Python program that takes an integer as input and prints the multiplication table for that integer from 1 to 10. Output format: <number> x <multiplier> = <result>.",
+    "code": "n = int(input())\nfor i in range(1, 11):\n    print(f\"{n} x {i} = {n * i}\")",
+    "topic": "Basic Programs",
+    "topicOrder": 1
+  },
+  {
+    "id": "lab-1.2.1",
+    "section": "lab",
+    "number": "1.2.1",
+    "title": "Conditionals & Recursion",
+    "statement": "Write a Python program that accepts the number of courses and the marks of a student in those courses. Determine grade based on aggregate percentage: >75 Distinction, 60-75 First Division, 50-60 Second Division, 40-50 Third Division. If any course mark < 40, print \"Fail\". Otherwise print aggregate percentage (2 decimals) and grade.",
+    "code": "n = int(input())\nmarks = list(map(int, input().split()))\n\nif any(mark < 40 for mark in marks):\n    print(\"Fail\")\nelse:\n    aggregate = sum(marks) / n\n    print(f\"Aggregate Percentage: {aggregate:.2f}\")\n    if aggregate > 75:\n        print(\"Grade: Distinction\")\n    elif aggregate >= 60:\n        print(\"Grade: First Division\")\n    elif aggregate >= 50:\n        print(\"Grade: Second Division\")\n    elif aggregate >= 40:\n        print(\"Grade: Third Division\")",
+    "topic": "Conditionals & Recursion",
+    "topicOrder": 2
+  },
+  {
+    "id": "lab-1.2.2",
+    "section": "lab",
+    "number": "1.2.2",
+    "title": "Conditionals & Recursion",
+    "statement": "Write a Python program that uses recursion to print the first n terms of the Fibonacci series. Input: a single integer n. Output: first n terms of the Fibonacci sequence, separated by spaces.",
+    "code": "def fibonacci(n):\n    if n == 0:\n        return 0\n    if n == 1:\n        return 1\n    return fibonacci(n - 1) + fibonacci(n - 2)\n\nn = int(input())\nfor i in range(n):\n    print(fibonacci(i), end=\" \")",
+    "topic": "Conditionals & Recursion",
+    "topicOrder": 2
+  },
+  {
+    "id": "lab-1.2.3",
+    "section": "lab",
+    "number": "1.2.3",
+    "title": "Conditionals & Recursion",
+    "statement": "Write a Python program to print a pattern of asterisks in the form of a right-angled triangle. Input: an integer representing the number of rows. Output: pattern of asterisks, each row containing an increasing number of asterisks.",
+    "code": "n = int(input())\nfor i in range(1, n + 1):\n    for j in range(i):\n        print(\"*\", end=\" \")\n    print()",
+    "topic": "Conditionals & Recursion",
+    "topicOrder": 2
+  },
+  {
+    "id": "lab-1.2.4",
+    "section": "lab",
+    "number": "1.2.4",
+    "title": "Conditionals & Recursion",
+    "statement": "Write a Python program to print a right-angled triangle pattern of numbers. Input: an integer representing the number of rows. Output: pattern of numbers separated by space, with each row containing increasing numbers starting from 1 up to the row number.",
+    "code": "n = int(input())\nfor i in range(1, n + 1):\n    for j in range(1, i + 1):\n        print(j, end=\" \")\n    print()",
+    "topic": "Conditionals & Recursion",
+    "topicOrder": 2
+  },
+  {
+    "id": "lab-2.1.1",
+    "section": "lab",
+    "number": "2.1.1",
+    "title": "Lists & Dictionaries",
+    "statement": "Write a Python program that implements a menu-driven interface for managing a list of integers, with options: 1. Add, 2. Remove, 3. Display, 4. Quit. Handle invalid inputs, empty list cases, and invalid menu choices appropriately.",
+    "code": "numbers = []\n\nwhile True:\n    print(\"1. Add\")\n    print(\"2. Remove\")\n    print(\"3. Display\")\n    print(\"4. Quit\")\n\n    choice = input(\"Enter choice: \")\n\n    if choice == '1':\n        value = input(\"Integer: \")\n        try:\n            num = int(value)\n            numbers.append(num)\n            print(f\"List after adding: {numbers}\")\n        except ValueError:\n            print(\"Invalid input\")\n\n    elif choice == '2':\n        if not numbers:\n            print(\"List is empty\")\n        else:\n            value = input(\"Integer: \")\n            try:\n                num = int(value)\n                if num in numbers:\n                    numbers.remove(num)\n                    print(f\"List after removing: {numbers}\")\n                else:\n                    print(\"Element not found\")\n            except ValueError:\n                print(\"Invalid input\")\n\n    elif choice == '3':\n        if not numbers:\n            print(\"List is empty\")\n        else:\n            print(numbers)\n\n    elif choice == '4':\n        break\n\n    else:\n        print(\"Invalid choice\")",
+    "topic": "Lists & Dictionaries",
+    "topicOrder": 3
+  },
+  {
+    "id": "lab-2.1.2",
+    "section": "lab",
+    "number": "2.1.2",
+    "title": "Lists & Dictionaries",
+    "statement": "Write a Python program to perform insertion, update, deletion, and traversal operations on a dictionary with an initial dictionary of 10 predefined student records. Perform each operation using dictionary methods and display the dictionary after each step.",
+    "code": "# Initial dictionary with 10 predefined records\nstudent = {\n    1: \"Amit\",\n    2: \"Riya\",\n    3: \"Kiran\",\n    4: \"Neha\",\n    5: \"Arjun\",\n    6: \"Pooja\",\n    7: \"Rahul\",\n    8: \"Sneha\",\n    9: \"Vikram\",\n    10: \"Anjali\"\n}\n# Display original dictionary\nprint(\"Original Dictionary:\", student)\n\n# Read key and value to insert\ninsert_key = int(input())\ninsert_value = input()\n\n# Insertion\nstudent[insert_key] = insert_value\nprint(\"After Insertion:\", student)\n\n# Read key and value to update\nupdate_key = int(input())\nupdate_value = input()\n\n# Update if update_key in student:\nif update_key in student:\n    student[update_key] = update_value\nprint(\"After Update:\", student)\n\n# Read key to delete\ndelete_key = int(input())\n\n# Deletion\nif delete_key in student:\n    del student[delete_key]\nprint(\"After Deletion:\", student)\n\n# Traversal\nprint(\"Traversing Dictionary:\")\nfor key, value in student.items():\n    print(key, \":\", value)",
+    "topic": "Lists & Dictionaries",
+    "topicOrder": 3
+  },
+  {
+    "id": "lab-2.2.1",
+    "section": "lab",
+    "number": "2.2.1",
+    "title": "Array Operations",
+    "statement": "Write a program to check whether the given element is present or not in the array of elements using linear search. If found, print the index (starting index if found multiple times); else print \"Not found\".",
+    "code": "arr = list(map(int, input().split()))\nkey = int(input())\n\nfound = False\n\nfor i in range(len(arr)):\n    if arr[i] == key:\n        print(i)\n        found = True\n        break\n\nif not found:\n    print(\"Not found\")",
+    "topic": "Array Operations",
+    "topicOrder": 4
+  },
+  {
+    "id": "lab-2.2.2",
+    "section": "lab",
+    "number": "2.2.2",
+    "title": "Array Operations",
+    "statement": "You are provided with the heights of 11 cricket players (in centimeters). Identify the tallest player, who will be selected as the captain of the team.",
+    "code": "heights = list(map(int, input().split()))\nprint(max(heights))",
+    "topic": "Array Operations",
+    "topicOrder": 4
+  },
+  {
+    "id": "lab-3.1.1",
+    "section": "lab",
+    "number": "3.1.1",
+    "title": "NumPy Basics",
+    "statement": "Write a Python program to create a NumPy array based on user input and display: the array, number of dimensions (ndim), shape, and total number of elements (size). Use reshape() with given rows r and columns c.",
+    "code": "import numpy as np\nr , c = map(int, input().split())\nelements = []\n\nfor _ in range(r):\n    elements.extend(map(int, input().split()))\n\narr = np.array(elements).reshape(r, c)\n\nprint(arr)\nprint(arr.ndim)\nprint(arr.shape)\nprint(arr.size)",
+    "topic": "NumPy Basics",
+    "topicOrder": 5
+  },
+  {
+    "id": "lab-3.2.1",
+    "section": "lab",
+    "number": "3.2.1",
+    "title": "NumPy Operations",
+    "statement": "Given two 3x3 matrices, matrix_a and matrix_b, compute and display: Addition, Subtraction, Element-wise Multiplication, Matrix Multiplication (dot product), and Transpose of Matrix A.",
+    "code": "import numpy as np\n\nprint(\"Enter Matrix A:\")\nmatrix_a = []\nfor i in range(3):\n    row = list(map(int, input().split()))\n    matrix_a.append(row)\n\nprint(\"Enter Matrix B:\")\nmatrix_b = []\nfor i in range(3):\n    row = list(map(int, input().split()))\n    matrix_b.append(row)\n\nA = np.array(matrix_a)\nB = np.array(matrix_b)\n\nadd = A + B\nsub = A - B\nelement_mul = A * B\nmatrix_mul = A.dot(B)\ntranspose_A = A.T\n\n# Addition\nprint(\"Addition (A + B):\")\nprint(add)\n\n# Subtraction\nprint(\"Subtraction (A - B):\")\nprint(sub)\n\n# Multiplication (element-wise)\nprint(\"Element-wise Multiplication (A * B):\")\nprint(element_mul)\n\n# Matrix multiplication (dot product)\nprint(\"A dot B:\")\nprint(matrix_mul)\n\n# Transpose\nprint(\"Transpose of A:\")\nprint(transpose_A)",
+    "topic": "NumPy Operations",
+    "topicOrder": 6
+  },
+  {
+    "id": "lab-3.2.2",
+    "section": "lab",
+    "number": "3.2.2",
+    "title": "NumPy Operations",
+    "statement": "Given two arrays arr1 and arr2 (two 3x3 arrays), perform horizontal stacking (hstack) and vertical stacking (vstack) using NumPy, and display both results.",
+    "code": "import numpy as np\n\n# Input matrices\nprint(\"Enter Array1:\")\narr1 = np.array([list(map(int, input().split())) for i in range(3)])\n\nprint(\"Enter Array2:\")\narr2 = np.array([list(map(int, input().split())) for i in range(3)])\n\n# Perform horizontal stacking (hstack)\nh_stack = np.hstack((arr1, arr2))\nprint(\"Horizontal Stack:\")\nprint(h_stack)\n\n# Perform vertical stacking (vstack)\nv_stack = np.vstack((arr1, arr2))\nprint(\"Vertical Stack:\")\nprint(v_stack)",
+    "topic": "NumPy Operations",
+    "topicOrder": 6
+  },
+  {
+    "id": "lab-3.2.3",
+    "section": "lab",
+    "number": "3.2.3",
+    "title": "NumPy Operations",
+    "statement": "Write a Python program that takes start, stop, and step values from the user, generates a sequence using numpy's arange() based on these inputs, and prints the generated sequence.",
+    "code": "import numpy as np\n\n# Take user input for the start, stop, and step of the sequence\nstart = int(input())\nstop = int(input())\nstep = int(input())\n\n# Generate the sequence using np.arange()\nsequence = np.arange(start, stop, step)\n\n# Print the generated sequence\nprint(sequence)",
+    "topic": "NumPy Operations",
+    "topicOrder": 6
+  },
+  {
+    "id": "lab-3.2.4",
+    "section": "lab",
+    "number": "3.2.4",
+    "title": "NumPy Operations",
+    "statement": "Given two arrays A and B, complete the function array_operations to compute: element-wise sum, difference, product; mean, median, standard deviation of A; bitwise AND, OR, XOR of the arrays. Print results in the specified format.",
+    "code": "import numpy as np\n\ndef array_operations(A, B):\n    # Convert A and B to NumPy arrays\n    arr_a = np.array(A)\n    arr_b = np.array(B)\n\n    # Arithmetic Operations\n    sum_result = arr_a + arr_b\n    diff_result = arr_a - arr_b\n    prod_result = arr_a * arr_b\n\n    # Statistical Operations (on array A)\n    mean_A = np.mean(arr_a)\n    median_A = np.median(arr_a)\n    std_dev_A = np.std(arr_a)\n\n    # Bitwise Operations\n    and_result = np.bitwise_and(arr_a, arr_b)\n    or_result = np.bitwise_or(arr_a, arr_b)\n    xor_result = np.bitwise_xor(arr_a, arr_b)\n\n    # Output results with one space between each element\n    print(\"Element-wise Sum:\", ' '.join(map(str, sum_result)))\n    print(\"Element-wise Difference:\", ' '.join(map(str, diff_result)))\n    print(\"Element-wise Product:\", ' '.join(map(str, prod_result)))\n\n    print(f\"Mean of A: {mean_A}\")\n    print(f\"Median of A: {median_A}\")\n    print(f\"Standard Deviation of A: {std_dev_A}\")\n\n    print(\"Bitwise AND:\", ' '.join(map(str, and_result)))\n    print(\"Bitwise OR:\", ' '.join(map(str, or_result)))\n    print(\"Bitwise XOR:\", ' '.join(map(str, xor_result)))\n\n# Input handling\nA = list(map(int, input().split()))  # Elements of array A\nB = list(map(int, input().split()))  # Elements of array B\narray_operations(A, B)",
+    "topic": "NumPy Operations",
+    "topicOrder": 6
+  },
+  {
+    "id": "lab-3.2.5",
+    "section": "lab",
+    "number": "3.2.5",
+    "title": "NumPy Operations",
+    "statement": "Complete the code to create a view of the original_array (view_array) and a copy of the original_array (copy_array). Observe how modifying the view affects the original array, while modifying the copy does not.",
+    "code": "import numpy as np\n\ninputlist = list(map(int, input().split(\" \")))\n\n# Original array\noriginal_array = np.array(inputlist)\n\n# Create a view\nview_array = original_array.view()\n\n# Create a copy\n# A copy is a completely separate object\ncopy_array = original_array.copy()\n\n# Modify the view\nview_array[0] = 99\nprint(\"Original array after modifying view:\", original_array)\nprint(\"View array:\", view_array)\n\n# Modify the copy\ncopy_array[1] = 88\nprint(\"Original array after modifying copy:\", original_array)\nprint(\"Copy array:\", copy_array)",
+    "topic": "NumPy Operations",
+    "topicOrder": 6
+  },
+  {
+    "id": "lab-3.2.6",
+    "section": "lab",
+    "number": "3.2.6",
+    "title": "NumPy Operations",
+    "statement": "Given array1 and search_value, count_value, broadcast_value, complete code to: find indices where search_value appears; count occurrences of count_value; add broadcast_value using broadcasting; sort array1 in ascending order.",
+    "code": "import numpy as np\n\n# Input array from the user\narray1 = np.array(list(map(int, input().split())))\n\n# Searching\nsearch_value = int(input(\"Value to search: \"))\ncount_value = int(input(\"Value to count: \"))\nbroadcast_value = int(input(\"Value to add: \"))\n\n# Find indices where value matches in array1\nindices = np.where(array1 == search_value)[0]\n\n# Count occurrences in array1\ncount = np.sum(array1 == count_value)\n\n# Broadcasting addition\nbroadcasted = array1 + broadcast_value\n\n# Sort the first array\nsorted_array = np.sort(array1)\n\nprint(indices)\nprint(count)\nprint(broadcasted)\nprint(sorted_array)",
+    "topic": "NumPy Operations",
+    "topicOrder": 6
+  },
+  {
+    "id": "lab-3.2.7",
+    "section": "lab",
+    "number": "3.2.7",
+    "title": "NumPy Operations",
+    "statement": "Write a Python program that reads a CSV file of student roll numbers and marks (3 subjects), then performs a large set of operations: print details, totals, min/max, subject-wise stats, filters, roll numbers by criteria, counts, sorting, index positions, etc. (Fill in the missing code.)",
+    "code": "import numpy as np\n\ndata = np.loadtxt(\"Sample.csv\", delimiter=',', skiprows=1)\n\n# 1\nprint(\"All student Details:\\n\", data)\n\n# 2\nprint(\"Total Students:\", data.shape[0])\n\n# 3\nprint(\"All Student Roll Nos\", data[:, 0])\n\n# 4\nprint(\"Subject 1 Marks\", data[:, 1])\n\n# 5\nprint(\"Min marks in Subject 2\", np.min(data[:, 2]))\n\n# 6\nprint(\"Max marks in Subject 3\", np.max(data[:, 3]))\n\n# 7\nprint(\"All subject marks:\", data[:, 1:4])\n\n# 8\ntotal = np.sum(data[:, 1:4], axis=1)\nprint(\"Total Marks\", total)\n\n# 9 round to 1 decimal\navg = np.round(np.mean(data[:, 1:4], axis=1), 1)\nprint(avg)\n\n# 10 round\navg_sub = np.round(np.mean(data[:, 1:4], axis=0), 1)\nprint(\"Average Marks of each subject\", avg_sub)\n\n# 11\nprint(\"Average Marks of S1 and S2\", avg_sub[:2])\n\n# 12\nprint(\"Average Marks of S1 and S3\", avg_sub[[0, 2]])\n\n# 13\nprint(\"Roll no who got maximum marks in Subject 3\", data[np.argmax(data[:, 3]), 0])",
+    "topic": "NumPy Operations",
+    "topicOrder": 6
+  },
+  {
+    "id": "lab-4.1.1",
+    "section": "lab",
+    "number": "4.1.1",
+    "title": "Pandas Basics",
+    "statement": "Write a Python program that takes a list of numbers, creates a Pandas series, and calculates the mean of even and odd numbers separately using groupby and mean() operations.",
+    "code": "import pandas as pd\n\n# Take inputs from the user to create a list of numbers\nnumbers = list(map(int, input().split()))\nseries = pd.Series(numbers)\n\n# Grouping by even and odd numbers and calculating the mean\ngrouped = series.groupby(series % 2 == 0).mean()\n\n# Display the mean of even and odd numbers with labels\ngrouped.index = ['Even' if is_even else 'Odd' for is_even in grouped.index]\nprint(\"Mean of even and odd numbers:\")\nprint(grouped)",
+    "topic": "Pandas Basics",
+    "topicOrder": 7
+  },
+  {
+    "id": "lab-4.1.2",
+    "section": "lab",
+    "number": "4.1.2",
+    "title": "Pandas Basics",
+    "statement": "A dictionary of lists has been provided. Create a DataFrame from it and perform: add a new row, modify a row, delete a row, add a column ('Gender'), modify a column (uppercase names), delete a column ('Age'). Display the DataFrame before and after each manipulation. NOTE: source code was truncated in original document; this is a reconstructed version.",
+    "code": "import pandas as pd\n\n# Provided dictionary of lists\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [25, 30, 35],\n}\n\n# Convert the dictionary to a DataFrame\ndf = pd.DataFrame(data)\n\n# Display the original DataFrame\nprint(\"Original DataFrame:\")\nprint(df)\n\nnew_name = input(\"New name: \")\nnew_age = int(input(\"New age: \"))\nnew_row = {'Name': new_name, 'Age': new_age}\ndf = df._append(new_row, ignore_index=True)\nprint(\"After adding a row:\\n\", df)\n\n# Modifying a row\nrow_index = int(input(\"Row index to modify: \"))\nupdated_age = int(input(\"New age: \"))\ndf.loc[row_index, 'Age'] = updated_age\nprint(\"After modifying a row:\")\nprint(df)\n\n# Deleting a row\ndel_index = int(input(\"Row index to delete: \"))\ndf = df.drop(del_index).reset_index(drop=True)\nprint(\"After deleting a row:\")\nprint(df)\n\n# Adding a new column\ngender_values = input(\"Enter genders separated by space: \").split()\ndf['Gender'] = gender_values\nprint(\"After adding a new column:\")\nprint(df)\n\n# Modifying a column\ndf['Name'] = df['Name'].str.upper()\nprint(\"After modifying a column:\")\nprint(df)\n\n# Deleting a column\ndf = df.drop('Age', axis=1)\nprint(\"After deleting a column:\")\nprint(df)",
+    "topic": "Pandas Basics",
+    "topicOrder": 7
+  },
+  {
+    "id": "lab-4.1.3",
+    "section": "lab",
+    "number": "4.1.3",
+    "title": "Pandas Basics",
+    "statement": "Write a program to read a text file containing student information (name, age, grade) using Pandas. Display first five rows, calculate average age (2 decimals), and filter students with grade up to 'B'.",
+    "code": "import pandas as pd\n\n# Read the text file into a DataFrame\nfile = input()\ndata = pd.read_csv(file, sep=\"\\s+\", header=None, names=[\"Name\", \"Age\", \"Grade\"])\n\nprint(\"First five rows:\")\nprint(data.head())\navg_age = round(data['Age'].mean(), 2)\nprint(f\"Average age: {avg_age}\")\nfiltered_data = data[data[\"Grade\"].isin([\"A\", \"B\"])]\nprint(\"Students with a grade up to B\")\nprint(filtered_data)",
+    "topic": "Pandas Basics",
+    "topicOrder": 7
+  },
+  {
+    "id": "lab-4.2.1",
+    "section": "lab",
+    "number": "4.2.1",
+    "title": "Pandas Analysis",
+    "statement": "Write a Python program that takes a CSV file (columns: Date, Product, Quantity, Price, City), groups data by Month, calculates total sales for each month, and finds/displays the month with the highest total sales.",
+    "code": "import pandas as pd\n\nfile_name = input()\ndf = pd.read_csv(file_name)\ndf['Total'] = df['Quantity'] * df['Price']\ndf['Month'] = pd.to_datetime(df['Date']).dt.to_period('M')\nmonthly_sales = df.groupby('Month')['Total'].sum()\nbest_month = monthly_sales.idxmax()\nhighest_sales = monthly_sales.max()\nprint(f\"Best month: {best_month}\")\nprint(f\"Total sales: ${highest_sales:.2f}\")",
+    "topic": "Pandas Analysis",
+    "topicOrder": 8
+  },
+  {
+    "id": "lab-4.2.2",
+    "section": "lab",
+    "number": "4.2.2",
+    "title": "Pandas Analysis",
+    "statement": "Write a Python program that takes a CSV file (columns: Date, Product, Quantity, Price, City), finds the product that sold the most in terms of quantity sold, and displays it with the total quantity sold.",
+    "code": "import pandas as pd\n\nfile_name = input()\ndf = pd.read_csv(file_name)\n\nsales_totals = df.groupby('Product')['Quantity'].sum()\nbest_product = sales_totals.idxmax()\nhighest_quantity = sales_totals.max()\n\nprint(f\"Best selling product: {best_product}\")\nprint(f\"Total quantity sold: {highest_quantity}\")",
+    "topic": "Pandas Analysis",
+    "topicOrder": 8
+  },
+  {
+    "id": "lab-4.2.3",
+    "section": "lab",
+    "number": "4.2.3",
+    "title": "Pandas Analysis",
+    "statement": "Write a Python program that takes a CSV file (columns: Date, Product, Quantity, Price, City), groups by City, calculates total quantity sold per city, and finds the city that sold the most products.",
+    "code": "import pandas as pd\n\nfile_name = input()\ndf = pd.read_csv(file_name)\n\ncity_sales = df.groupby('City')['Quantity'].sum()\nbest_city = city_sales.idxmax()\n\nprint(f\"City sold the most products: {best_city}\")",
+    "topic": "Pandas Analysis",
+    "topicOrder": 8
+  },
+  {
+    "id": "lab-4.2.4",
+    "section": "lab",
+    "number": "4.2.4",
+    "title": "Pandas Analysis",
+    "statement": "Write a Python program that takes a CSV file (columns: Date, Product, Quantity, Price, City), finds all pairs of products sold together on the same date, and outputs the product pair(s) sold most frequently.",
+    "code": "import pandas as pd\nfrom itertools import combinations\nfrom collections import Counter\n\nfile_name = input()\ndf = pd.read_csv(file_name)\n\ngrouped = df.groupby('Date')['Product'].apply(list)\n\nall_pairs = []\nfor products in grouped:\n    products.sort()\n    day_pairs = list(combinations(products, 2))\n    all_pairs.extend(day_pairs)\n\npair_counts = Counter(all_pairs)\n\nif pair_counts:\n    max_freq = max(pair_counts.values())\n    sorted_pairs = sorted(pair_counts.items())\n    for pair, count in sorted_pairs:\n        if count == max_freq:\n            print(f\"{pair[0]} and {pair[1]}: {count} times\")",
+    "topic": "Pandas Analysis",
+    "topicOrder": 8
+  },
+  {
+    "id": "lab-4.2.5",
+    "section": "lab",
+    "number": "4.2.5",
+    "title": "Pandas Analysis",
+    "statement": "Display first/last 5 rows, get shape, print .info(), get .describe(), check missing values, fill 'Age' with median, fill 'Embarked' with mode, drop 'Cabin' column, create 'FamilySize' column (SibSp + Parch).",
+    "code": "import pandas as pd\nimport numpy as np\n\n# Load the Titanic dataset\ndata = pd.read_csv('Titanic-Dataset.csv')\n\n# 1. Display the first 5 rows of the dataset\nprint(data.head())\n\n# 2. Display the last 5 rows of the dataset\nprint(data.tail())\n\n# 3. Get the shape of the dataset\nprint(data.shape)\n\n# 4. Get a summary of the dataset (info)\nprint(data.info())\n\n# 5. Get basic statistics of the dataset\nprint(data.describe())\n\n# 6. Check for missing values\nprint(data.isnull().sum())\n\n# 7. Fill missing values in the 'Age' column with the median age\ndata['Age'] = data['Age'].fillna(data['Age'].median())\n\n# 8. Fill missing values in the 'Embarked' column with the mode\ndata['Embarked'] = data['Embarked'].fillna(data['Embarked'].mode()[0])\n\n# 9. Drop the 'Cabin' column due to many missing values\ndata = data.drop('Cabin', axis=1)\n\n# 10. Create a new column 'FamilySize' by adding 'SibSp' and 'Parch'\ndata['FamilySize'] = data['SibSp'] + data['Parch']",
+    "topic": "Pandas Analysis",
+    "topicOrder": 8
+  },
+  {
+    "id": "lab-4.2.6",
+    "section": "lab",
+    "number": "4.2.6",
+    "title": "Pandas Analysis",
+    "statement": "Create 'IsAlone' column, convert 'Sex' to numeric, one-hot encode 'Embarked' (drop first), get mean age, median fare, passenger counts by class/gender/survival, survival rate, survival rate by gender.",
+    "code": "import pandas as pd\nimport numpy as np\n\ndata = pd.read_csv('Titanic-Dataset.csv')\ndata['FamilySize'] = data['SibSp'] + data['Parch']\n\n# 1. Create a new column 'IsAlone' (1 if alone, 0 otherwise)\ndata['IsAlone'] = np.where(data['FamilySize'] == 0, 1, 0)\n\n# 2. Convert 'Sex' to numeric (male: 0, female: 1)\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\n\n# 3. One-hot encode the 'Embarked' column\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\n# 4. Get the mean age of passengers\nprint(data['Age'].mean())\n\n# 5. Get the median fare of passengers\nprint(data['Fare'].median())\n\n# 6. Get the number of passengers by class\nprint(data['Pclass'].value_counts())\n\n# 7. Get the number of passengers by gender\nprint(data['Sex'].value_counts())\n\n# 8. Get the number of passengers by survival status\nprint(data['Survived'].value_counts())\n\n# 9. Calculate the survival rate\nprint(data['Survived'].mean())\n\n# 10. Calculate the survival rate by gender\nprint(data.groupby('Sex')['Survived'].mean())",
+    "topic": "Pandas Analysis",
+    "topicOrder": 8
+  },
+  {
+    "id": "lab-4.2.7",
+    "section": "lab",
+    "number": "4.2.7",
+    "title": "Pandas Analysis",
+    "statement": "Survival rate by class, by embarkation, by family size, by being alone; average fare/age by class; average age/fare by survival; number of survivors/non-survivors by class.",
+    "code": "import pandas as pd\nimport numpy as np\n\ndata = pd.read_csv('Titanic-Dataset.csv')\ndata['FamilySize'] = data['SibSp'] + data['Parch']\ndata['IsAlone'] = np.where(data['FamilySize'] > 0, 0, 1)\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\n# 1\nprint(data.groupby('Pclass')['Survived'].mean())\n\n# 2\nprint(data.groupby('Embarked_S')['Survived'].mean())\n\n# 3\nprint(data.groupby('FamilySize')['Survived'].mean())\n\n# 4\nprint(data.groupby('IsAlone')['Survived'].mean())\n\n# 5\nprint(data.groupby('Pclass')['Fare'].mean())\n\n# 6\nprint(data.groupby('Pclass')['Age'].mean())\n\n# 7\nprint(data.groupby('Survived')['Age'].mean())\n\n# 8\nprint(data.groupby('Survived')['Fare'].mean())\n\n# 9\nprint(data[data['Survived'] == 1]['Pclass'].value_counts())\n\n# 10\nprint(data[data['Survived'] == 0]['Pclass'].value_counts())",
+    "topic": "Pandas Analysis",
+    "topicOrder": 8
+  },
+  {
+    "id": "lab-4.2.8",
+    "section": "lab",
+    "number": "4.2.8",
+    "title": "Pandas Analysis",
+    "statement": "Number of survivors/non-survivors by gender and by embarked location, percentage of children/adults who survived, median age/fare of survivors and non-survivors.",
+    "code": "import pandas as pd\nimport numpy as np\n\ndata = pd.read_csv('Titanic-Dataset.csv')\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\n# 1. Get the number of survivors by gender\nprint(data[data['Survived'] == 1]['Sex'].value_counts())\n\n# 2. Get the number of non-survivors by gender\nprint(data[data['Survived'] == 0]['Sex'].value_counts())\n\n# 3. Get the number of survivors by embarked location\nprint(data[data['Survived'] == 1]['Embarked_S'].value_counts())\n\n# 4. Get the number of non-survivors by embarked location\nprint(data[data['Survived'] == 0]['Embarked_S'].value_counts())\n\n# 5. Calculate the percentage of children (Age < 18) who survived\nprint(data[data['Age'] < 18]['Survived'].mean())\n\n# 6. Calculate the percentage of adults (Age >= 18) who survived\nprint(data[data['Age'] >= 18]['Survived'].mean())\n\n# 7. Get the median age of survivors\nprint(data[data['Survived'] == 1]['Age'].median())\n\n# 8. Get the median age of non-survivors\nprint(data[data['Survived'] == 0]['Age'].median())\n\n# 9. Get the median fare of survivors\nprint(data[data['Survived'] == 1]['Fare'].median())\n\n# 10. Get the median fare of non-survivors\nprint(data[data['Survived'] == 0]['Fare'].median())",
+    "topic": "Pandas Analysis",
+    "topicOrder": 8
+  },
+  {
+    "id": "lab-5.1.1",
+    "section": "lab",
+    "number": "5.1.1",
+    "title": "Matplotlib Basics",
+    "statement": "Create a stacked area plot to visualize temperature variations for three cities (City A, B, C) across the months of the year. Label x-axis \"Month\", y-axis \"Temperature\", title \"Temperature Variation\".",
+    "code": "import matplotlib.pyplot as plt\nimport pandas as pd\n\n# Data for Months and Temperature for three cities\ndata = {\n    'Month': ['January', 'February', 'March', 'April', 'May', 'June', 'July',\n              'August', 'September', 'October', 'November', 'December'],\n    'City_A_Temperature': [5, 7, 10, 13, 17, 20, 22, 21, 18, 12, 8, 6],\n    'City_B_Temperature': [2, 3, 5, 6, 10, 14, 16, 17, 12, 9, 5, 3],\n    'City_C_Temperature': [3, 4, 6, 8, 9, 12, 15, 14, 10, 7, 4, 2]\n}\n\n# Create DataFrame from data\ndf = pd.DataFrame(data)\n\n# Create the Stacked area Plot\nplt.stackplot(df['Month'], df['City_A_Temperature'], df['City_B_Temperature'], df['City_C_Temperature'])\n\n# Adding labels and titles\nplt.xlabel('Month')\nplt.ylabel('Temperature')\nplt.title('Temperature Variation')\n\n# Display graph\nplt.show()",
+    "topic": "Matplotlib Basics",
+    "topicOrder": 9
+  },
+  {
+    "id": "lab-5.2.1",
+    "section": "lab",
+    "number": "5.2.1",
+    "title": "Matplotlib Visualization",
+    "statement": "Analyze and visualize Titanic dataset with 5 visualizations in a 3x2 grid: bar plot (Pclass), pie chart (Gender), histogram (Age, 8 bins), bar plot (Survival Count), scatter plot (Fare vs Age).",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the Titanic dataset from the CSV file\ndf = pd.read_csv('titanic.csv')\n\n# Set up the figure for 5 subplots\nfig, axes = plt.subplots(3, 2, figsize=(12, 12))\n\n# 1. Bar Plot (Pclass Distribution)\npclass_counts = df['Pclass'].value_counts().sort_index()\naxes[0, 0].bar(pclass_counts.index, pclass_counts.values, color='skyblue')\naxes[0, 0].set_title('Passenger Class Distribution')\naxes[0, 0].set_xlabel('Pclass')\naxes[0, 0].set_ylabel('Count')\n\n# 2. Pie Chart (Gender Distribution)\ngender_counts = df['Gender'].value_counts()\naxes[0, 1].pie(gender_counts.values, labels=gender_counts.index,\n               autopct='%1.1f%%', colors=['lightblue', 'lightcoral'])\naxes[0, 1].set_title('Gender Distribution')\n\n# 3. Histogram (Age Distribution)\naxes[1, 0].hist(df['Age'].dropna(), bins=8, color='lightgreen', edgecolor='black')\naxes[1, 0].set_title('Age Distribution')\naxes[1, 0].set_xlabel('Age')\naxes[1, 0].set_ylabel('Frequency')\n\n# 4. Bar Plot (Survival Count)\nsurvival_counts = df['Survived'].value_counts().sort_index()\naxes[1, 1].bar(survival_counts.index, survival_counts.values, color=['lightblue', 'lightcoral'])\naxes[1, 1].set_title('Survival Count')\naxes[1, 1].set_xlabel('Survived (0 = No, 1 = Yes)')\naxes[1, 1].set_ylabel('Count')\n\n# 5. Scatter Plot (Fare vs Age)\naxes[2, 0].scatter(df['Age'], df['Fare'], color='orange')\naxes[2, 0].set_title('Fare vs Age')\naxes[2, 0].set_xlabel('Age')\naxes[2, 0].set_ylabel('Fare')\n\nplt.tight_layout()\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.2",
+    "section": "lab",
+    "number": "5.2.2",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a histogram for the distribution of the 'Age' column from the Titanic dataset with 30 bins, edge color black, labels 'Age'/'Frequency', title \"Age Distribution\".",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\nplt.hist(data['Age'], bins=30, edgecolor='k')\nplt.xlabel('Age')\nplt.ylabel('Frequency')\nplt.title('Age Distribution')\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.3",
+    "section": "lab",
+    "number": "5.2.3",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a bar chart showing the count of passengers who survived and did not survive in the Titanic dataset. Title \"Survival Count\", x-axis 'Survived', y-axis 'Count'.",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\nsurvival_counts = data['Survived'].value_counts()\n\nsurvival_counts.plot(kind='bar')\n\nplt.title('Survival Count')\nplt.xlabel('Survived')\nplt.ylabel('Count')\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.4",
+    "section": "lab",
+    "number": "5.2.4",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a stacked bar chart showing survival counts grouped by gender. Title \"Survival by Gender\", x-axis 'Gender', y-axis 'Count', legend 'Not Survived'/'Survived'.",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\nsurvival_counts = data.groupby('Sex')['Survived'].value_counts().unstack()\n\nsurvival_counts.plot(kind='bar', stacked=True)\n\nplt.title(\"Survival by Gender\")\nplt.xlabel(\"Gender\")\nplt.ylabel(\"Count\")\n\nplt.legend([\"Not Survived\", \"Survived\"])\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.5",
+    "section": "lab",
+    "number": "5.2.5",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a stacked bar chart showing survival counts grouped by Pclass. Title \"Survival by Pclass\", x-axis 'Pclass', y-axis 'Count', legend 'Not Survived'/'Survived'. Use groupby() with value_counts().",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\nsurvival_counts = data.groupby('Pclass')['Survived'].value_counts().unstack()\n\nsurvival_counts.plot(kind='bar', stacked=True)\n\nplt.title(\"Survival by Pclass\")\nplt.xlabel(\"Pclass\")\nplt.ylabel(\"Count\")\n\nplt.legend([\"Not Survived\", \"Survived\"])\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.6",
+    "section": "lab",
+    "number": "5.2.6",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a stacked bar chart showing survival count based on Embarked_Q column (after one-hot encoding Embarked). Title \"Survival by Embarked\", x-axis 'Embarked', y-axis 'Count', legend 'Survived'/'Not Survived'.",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\nsurvival_counts = data.groupby('Embarked_Q')['Survived'].value_counts().unstack()\n\nsurvival_counts.plot(kind='bar', stacked=True)\n\nplt.title(\"Survival by Embarked\")\nplt.xlabel(\"Embarked\")\nplt.ylabel(\"Count\")\n\nplt.legend([\"Not Survived\", \"Survived\"])\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.7",
+    "section": "lab",
+    "number": "5.2.7",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a boxplot showing distribution of 'Age' grouped by Pclass. Title \"Age by Pclass\", remove default subtitle, x-axis 'Pclass', y-axis 'Age'.",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\ndata.boxplot(column='Age', by='Pclass')\n\nplt.title(\"Age by Pclass\")\nplt.suptitle(\"\")\nplt.xlabel(\"Pclass\")\nplt.ylabel(\"Age\")\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.8",
+    "section": "lab",
+    "number": "5.2.8",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a boxplot showing distribution of 'Age' grouped by Survived. Title \"Age by Survival\", remove default subtitle, x-axis 'Survived', y-axis 'Age'.",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\ndata.boxplot(column='Age', by='Survived')\n\nplt.title('Age by Survival')\nplt.suptitle('')\nplt.xlabel('Survived')\nplt.ylabel('Age')\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.9",
+    "section": "lab",
+    "number": "5.2.9",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a boxplot showing distribution of 'Fare' grouped by Pclass. Title \"Fare by Pclass\", remove default subtitle, x-axis 'Pclass', y-axis 'Fare'.",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\ndata.boxplot(column='Fare', by='Pclass')\n\nplt.title('Fare by Pclass')\nplt.suptitle('')\nplt.xlabel('Pclass')\nplt.ylabel('Fare')\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.10",
+    "section": "lab",
+    "number": "5.2.10",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a scatter plot showing the relationship between 'Age' and 'Fare'. Title \"Age vs. Fare\", x-axis 'Age', y-axis 'Fare'.",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\nplt.scatter(data['Age'], data['Fare'])\n\nplt.title('Age vs. Fare')\nplt.xlabel('Age')\nplt.ylabel('Fare')\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  },
+  {
+    "id": "lab-5.2.11",
+    "section": "lab",
+    "number": "5.2.11",
+    "title": "Matplotlib Visualization",
+    "statement": "Plot a scatter plot showing relationship between 'Age' and 'Fare' color-coded by survival status (red = did not survive, blue = survived). Title \"Age vs. Fare by Survival\", x-axis 'Age', y-axis 'Fare'.",
+    "code": "import pandas as pd\nimport matplotlib.pyplot as plt\n\ndata = pd.read_csv('Titanic-Dataset.csv')\n\ndata['Age'].fillna(data['Age'].median(), inplace=True)\ndata['Embarked'].fillna(data['Embarked'].mode()[0], inplace=True)\ndata.drop('Cabin', axis=1, inplace=True)\n\ndata['Sex'] = data['Sex'].map({'male': 0, 'female': 1})\ndata = pd.get_dummies(data, columns=['Embarked'], drop_first=True)\n\nplt.scatter(\n    data['Age'],\n    data['Fare'],\n    c=data['Survived'].map({0: 'red', 1: 'blue'})\n)\n\nplt.title(\"Age vs. Fare by Survival\")\nplt.xlabel(\"Age\")\nplt.ylabel(\"Fare\")\n\nplt.show()",
+    "topic": "Matplotlib Visualization",
+    "topicOrder": 10
+  }
+]

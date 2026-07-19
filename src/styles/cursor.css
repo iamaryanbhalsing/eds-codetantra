@@ -1,0 +1,152 @@
+/* ===== CUSTOM CURSOR SYSTEM ===== */
+
+/* Hide default cursor on devices with accurate pointing */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Cursor dot */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  transition: opacity 0.2s ease,
+              transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.4s ease,
+              border-radius 0.5s ease,
+              width 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              height 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Cursor ring */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  will-change: transform;
+  transition: scale 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+              opacity 0.3s ease,
+              border-color 0.4s ease,
+              box-shadow 0.5s ease,
+              background 0.4s ease;
+}
+
+/* Cursor trail */
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99997;
+  will-change: transform, opacity;
+  transition: opacity 0.3s ease;
+}
+
+/* Sparkle shape */
+.cursor-sparkle {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: sparkleRotate 2s linear infinite;
+}
+
+@keyframes sparkleRotate {
+  from { rotate: 0deg; }
+  to { rotate: 360deg; }
+}
+
+/* Ring spinning animation */
+.cursor-ring-spin {
+  animation: ringSpin 4s linear infinite;
+}
+
+@keyframes ringSpin {
+  from { --spin: 0deg; }
+  to { --spin: 360deg; }
+}
+
+/* Ripple wave */
+.cursor-ripple {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99996;
+  will-change: transform, opacity;
+  animation: rippleExpand 2s ease-out infinite;
+}
+
+@keyframes rippleExpand {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.6; }
+  100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+}
+
+/* Spotlight overlay */
+.cursor-spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%),
+    rgba(255, 255, 255, 0.04),
+    transparent 40%
+  );
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse), (pointer: none) {
+  .cursor-dot,
+  .cursor-ring,
+  .cursor-trail,
+  .cursor-spotlight,
+  .cursor-orbit-dot,
+  .cursor-ripple,
+  .cursor-blob,
+  .cursor-crosshair-line {
+    display: none !important;
+  }
+}
+
+/* Reduced motion: disable trailing but keep dot */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring {
+    transition: none !important;
+  }
+
+  .cursor-trail,
+  .cursor-orbit-dot,
+  .cursor-ripple,
+  .cursor-blob,
+  .cursor-crosshair-line {
+    display: none !important;
+  }
+
+  .cursor-spotlight {
+    display: none !important;
+  }
+
+  .cursor-ring-spin {
+    animation: none !important;
+  }
+
+  .cursor-sparkle {
+    animation: none !important;
+  }
+}
