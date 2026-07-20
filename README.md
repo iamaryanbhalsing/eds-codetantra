@@ -13,7 +13,7 @@ Is is a comprehensive, student-friendly resource hub for Python Theory & Lab Sol
 ---
 
 **Key Highlights:**
-
+```
 ✅ 286+ Theory Questions with detailed solutions across 33+ core Python topics
 ✅ 44+ Lab Questions covering practical programming exercises
 ✅ Clean, organized structure with separate Theory and Lab sections
@@ -23,7 +23,7 @@ Numbers & Data Types, Operators, Control Structures
 Functions, Recursion, Modules
 Lists, Tuples, Dictionaries
 NumPy, Pandas, and Matplotlib
-
+```
 ---
 
 **Perfect for students looking for accurate, ready-to-use solutions to complete their EDS Python assignments and lab work efficiently.**
